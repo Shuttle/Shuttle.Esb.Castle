@@ -1,4 +1,4 @@
 shuttle-esb-castle
 ==================
 
-WindsorContainer implementation of the IMessageHandler factory for use with shuttle-esb.
+WindsorContainer implementation of the `IMessageHandlerFactory` for use with shuttle-esb.

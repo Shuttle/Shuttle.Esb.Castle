@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>shuttle-esb-castle</id>
+		<version>{semver}</version>
+		<authors>Eben Roux</authors>
+		<owners>Eben Roux</owners>
+		<licenseUrl>https://github.com/shuttle/shuttle-esb-castle/raw/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/shuttle/shuttle-esb-castle</projectUrl>
+		<iconUrl>https://raw.githubusercontent.com/Shuttle/shuttle-esb-castle/master/.media/logo.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>WindsorContainer implementation of the IMessageHandlerFactory for use with shuttle-esb.</description>
+		<releaseNotes/>
+		<copyright>Copyright (c) 2011-{year}, Eben Roux</copyright>
+		<tags>shuttle-esb castle</tags>
+		<dependencies>
+			<dependency id="castle.core" version="[3.3.0]" />
+			<dependency id="castle.windsor" version="[3.3.0]" />
+			<dependency id="shuttle-esb-core" version="[{shuttle-esb-core-version}]" />
+		</dependencies>
+	</metadata>
+</package>

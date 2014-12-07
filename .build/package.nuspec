@@ -14,8 +14,8 @@
 		<copyright>Copyright (c) 2011-{year}, Eben Roux</copyright>
 		<tags>shuttle-esb castle</tags>
 		<dependencies>
-			<dependency id="castle.core" version="[3.3.0]" />
-			<dependency id="castle.windsor" version="[3.3.0]" />
+			<dependency id="Castle.Core" version="{Castle.Core-version}" />
+			<dependency id="Castle.Windsor" version="{Castle.Windsor-version}" />
 			<dependency id="shuttle-esb-core" version="[{shuttle-esb-core-version}]" />
 		</dependencies>
 	</metadata>

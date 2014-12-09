@@ -16,7 +16,7 @@
 		<dependencies>
 			<dependency id="Castle.Core" version="{Castle.Core-version}" />
 			<dependency id="Castle.Windsor" version="{Castle.Windsor-version}" />
-			<dependency id="shuttle-esb-core" version="[{shuttle-esb-core-version}]" />
+			<dependency id="shuttle-esb-core" version="{shuttle-esb-core-version}" />
 		</dependencies>
 	</metadata>
 </package>

@@ -11,7 +11,7 @@ namespace Shuttle.ESB.Castle
 	public class CastleMessageHandlerFactory : MessageHandlerFactory
 	{
 		private readonly IWindsorContainer _container;
-		private static readonly Type _generic = typeof (IMessageHandler<>);
+		private static readonly Type MessageHandlerType = typeof (IMessageHandler<>);
 		private readonly Dictionary<Type, Type> _messageHandlerTypes = new Dictionary<Type, Type>();
 		private readonly ILog _log;
 
@@ -26,7 +26,7 @@ namespace Shuttle.ESB.Castle
 
 		public override IMessageHandler CreateHandler(object message)
 		{
-			var all = _container.ResolveAll(_generic.MakeGenericType(message.GetType()));
+			var all = _container.ResolveAll(MessageHandlerType.MakeGenericType(message.GetType()));
 
 			return all.Length != 0 ? (IMessageHandler) all.GetValue(0) : null;
 		}
@@ -56,7 +56,7 @@ namespace Shuttle.ESB.Castle
 
 			foreach (var handler in handlers)
 			{
-				foreach (var type in handler.ComponentModel.Implementation.InterfacesAssignableTo(_generic))
+				foreach (var type in handler.ComponentModel.Implementation.InterfacesAssignableTo(MessageHandlerType))
 				{
 					var messageType = type.GetGenericArguments()[0];
 

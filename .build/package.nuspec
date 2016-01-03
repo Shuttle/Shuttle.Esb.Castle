@@ -11,7 +11,7 @@
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>WindsorContainer implementation of the IMessageHandlerFactory for use with shuttle-esb.</description>
 		<releaseNotes/>
-		<copyright>Copyright (c) 2011-{year}, Eben Roux</copyright>
+		<copyright>Copyright (c) {year}, Eben Roux</copyright>
 		<tags>shuttle-esb castle</tags>
 		<dependencies>
 			<dependency id="Castle.Core" version="{Castle.Core-version}" />

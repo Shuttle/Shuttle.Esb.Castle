@@ -102,7 +102,7 @@ namespace Shuttle.ESB.Castle
 			}
 			catch (Exception ex)
 			{
-				_log.Warning(string.Format(CastleResources.RegisterHandlersException, ex.AllMessages()));
+				_log.Warning(string.Format(CastleResources.RegisterHandlersException, assembly.FullName, ex.AllMessages()));
 			}
 
 			RefreshHandledTypes();

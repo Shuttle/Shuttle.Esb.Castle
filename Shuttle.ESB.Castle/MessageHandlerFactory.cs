@@ -91,12 +91,19 @@ namespace Shuttle.ESB.Castle
 
 		public CastleMessageHandlerFactory RegisterHandlers(Assembly assembly)
 		{
-			_container.Register(
-				Classes.FromAssembly(assembly)
-					.BasedOn(typeof (IMessageHandler<>))
-					.WithServiceFromInterface()
-					.LifestyleTransient()
-				);
+			try
+			{
+				_container.Register(
+					Classes.FromAssembly(assembly)
+						.BasedOn(typeof (IMessageHandler<>))
+						.WithServiceFromInterface()
+						.LifestyleTransient()
+					);
+			}
+			catch (Exception ex)
+			{
+				_log.Warning(string.Format(CastleResources.RegisterHandlersException, ex.AllMessages()));
+			}
 
 			RefreshHandledTypes();
 

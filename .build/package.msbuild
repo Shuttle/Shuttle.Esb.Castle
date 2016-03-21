@@ -1,8 +1,8 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Deploy" ToolsVersion="4.0">
 	<PropertyGroup>
 		<DeploymentFolder>deployment</DeploymentFolder>
-		<PackageAssembly>Shuttle.ESB.Castle</PackageAssembly>
-		<PackageName>shuttle-esb-castle</PackageName>
+		<PackageAssembly>Shuttle.Esb.Castle</PackageAssembly>
+		<PackageName>Shuttle.Esb.Castle</PackageName>
 	</PropertyGroup>
 
 	<Import Project="Shuttle.Core.MSBuild.targets" />

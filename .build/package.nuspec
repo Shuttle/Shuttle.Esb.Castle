@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
 <package >
 	<metadata>
-		<id>shuttle-esb-castle</id>
+		<id>Shuttle.Esb.Castle</id>
 		<version>{semver}</version>
 		<authors>Eben Roux</authors>
 		<owners>Eben Roux</owners>
-		<licenseUrl>https://github.com/shuttle/shuttle-esb-castle/raw/master/LICENSE</licenseUrl>
-		<projectUrl>https://github.com/shuttle/shuttle-esb-castle</projectUrl>
-		<iconUrl>https://raw.githubusercontent.com/Shuttle/shuttle-esb-castle/master/.media/logo.png</iconUrl>
+		<licenseUrl>https://github.com/shuttle/Shuttle.Esb.Castle/raw/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/shuttle/Shuttle.Esb.Castle</projectUrl>
+		<iconUrl>https://raw.githubusercontent.com/Shuttle/Shuttle.Esb.Castle/master/.media/logo.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>WindsorContainer implementation of the IMessageHandlerFactory for use with shuttle-esb.</description>
+		<description>WindsorContainer implementation of the IMessageHandlerFactory for use with Shuttle.Esb.</description>
 		<releaseNotes/>
 		<copyright>Copyright (c) {year}, Eben Roux</copyright>
-		<tags>shuttle-esb castle</tags>
+		<tags>shuttle-esb shuttle-esb-castle castle windsorcontainer</tags>
 		<dependencies>
 			<dependency id="Castle.Core" version="{Castle.Core-version}" />
 			<dependency id="Castle.Windsor" version="{Castle.Windsor-version}" />
-			<dependency id="shuttle-esb-core" version="{shuttle-esb-core-version}" />
+			<dependency id="Shuttle.Esb" version="{Shuttle.Esb-version}" />
 		</dependencies>
 	</metadata>
 </package>

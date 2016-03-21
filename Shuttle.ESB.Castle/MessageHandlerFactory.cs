@@ -4,9 +4,9 @@ using System.Reflection;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Shuttle.Core.Infrastructure;
-using Shuttle.ESB.Core;
+using Shuttle.Esb;
 
-namespace Shuttle.ESB.Castle
+namespace Shuttle.Esb.Castle
 {
 	public class CastleMessageHandlerFactory : MessageHandlerFactory
 	{

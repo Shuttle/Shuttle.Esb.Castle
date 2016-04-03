@@ -67,7 +67,7 @@ namespace Shuttle.Esb.Castle
 
 					_messageHandlerTypes.Add(messageType, type);
 
-					_log.Information(string.Format(ESBResources.MessageHandlerFactoryHandlerRegistered, messageType.FullName, type.FullName));
+					_log.Information(string.Format(EsbResources.MessageHandlerFactoryHandlerRegistered, messageType.FullName, type.FullName));
 				}
 			}
 		}

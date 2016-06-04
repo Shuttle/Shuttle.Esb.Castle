@@ -18,6 +18,8 @@ The `CastleMessageHandlerFactory` inherits from the abstract `MessageHandlerFact
 
 ## Note on dependency injection
 
+**Note**: *This applies only to version priori to v6.1.1*
+
 The `DefaultMessageHandlerFactory` registers all `IMessageHandler<>` implementations in the current `AppDomain`.  As soon as you use a container this responsibility falls on the implementer.
 
 The message distribution makes use of `IMessageHandler<>` implementations in the core and there may be one or more modules, if used, that have message handlers.

@@ -7,7 +7,7 @@ using Shuttle.Core.Infrastructure;
 
 namespace Shuttle.Esb.Castle
 {
-    public class CastleMessageHandlerFactory : MessageHandlerFactory
+    public class CastleMessageHandlerFactory : MessageHandlerFactory, IRequireInitialization
     {
         private static readonly Type MessageHandlerType = typeof (IMessageHandler<>);
         private readonly IWindsorContainer _container;
@@ -35,7 +35,7 @@ namespace Shuttle.Esb.Castle
             return all.Length != 0 ? (IMessageHandler) all.GetValue(0) : null;
         }
 
-        public override void Initialize(IServiceBus bus)
+        public void Initialize(IServiceBus bus)
         {
             Guard.AgainstNull(bus, "bus");
 
@@ -43,8 +43,6 @@ namespace Shuttle.Esb.Castle
             {
                 _container.Register(Component.For<IServiceBus>().Instance(bus));
             }
-
-            _messageHandlerTypes.Clear();
 
             RefreshHandledTypes();
         }

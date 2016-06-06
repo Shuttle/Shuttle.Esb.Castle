@@ -83,14 +83,14 @@ namespace Shuttle.Esb.Castle
             {
                 _container.Register(
                     Classes.FromAssembly(assembly)
-                        .BasedOn(typeof (IMessageHandler<>))
+                        .BasedOn(MessageHandlerType)
                         .WithServiceFromInterface()
                         .LifestyleTransient()
                     );
             }
             catch (Exception ex)
             {
-                _log.Warning(string.Format(CastleResources.RegisterHandlersException, assembly.FullName,
+                _log.Warning(string.Format(EsbResources.RegisterHandlersException, assembly.FullName,
                     ex.AllMessages()));
             }
 

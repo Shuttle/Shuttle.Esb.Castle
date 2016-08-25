@@ -13,6 +13,7 @@ namespace Shuttle.Esb.Castle
         private readonly IWindsorContainer _container;
         private readonly ILog _log;
         private readonly Dictionary<Type, Type> _messageHandlerTypes = new Dictionary<Type, Type>();
+        private readonly ReflectionService _reflectionService = new ReflectionService();
 
         public CastleMessageHandlerFactory(IWindsorContainer container)
         {
@@ -43,31 +44,6 @@ namespace Shuttle.Esb.Castle
             {
                 _container.Register(Component.For<IServiceBus>().Instance(bus));
             }
-
-            RefreshHandledTypes();
-        }
-
-        private void RefreshHandledTypes()
-        {
-            var handlers = _container.Kernel.GetAssignableHandlers(typeof (IMessageHandler<>));
-
-            foreach (var handler in handlers)
-            {
-                foreach (var type in handler.ComponentModel.Implementation.InterfacesAssignableTo(MessageHandlerType))
-                {
-                    var messageType = type.GetGenericArguments()[0];
-
-                    if (_messageHandlerTypes.ContainsKey(messageType))
-                    {
-                        return;
-                    }
-
-                    _messageHandlerTypes.Add(messageType, type);
-
-                    _log.Information(string.Format(EsbResources.MessageHandlerFactoryHandlerRegistered,
-                        messageType.FullName, type.FullName));
-                }
-            }
         }
 
         public override void ReleaseHandler(IMessageHandler handler)
@@ -81,20 +57,30 @@ namespace Shuttle.Esb.Castle
         {
             try
             {
-                _container.Register(
-                    Classes.FromAssembly(assembly)
-                        .BasedOn(MessageHandlerType)
-                        .WithServiceFromInterface()
-                        .LifestyleTransient()
-                    );
+                foreach (var type in _reflectionService.GetTypes(MessageHandlerType, assembly))
+                {
+                    foreach (var @interface in type.GetInterfaces())
+                    {
+                        var messageType = @interface.GetGenericArguments()[0];
+
+                        if (!_messageHandlerTypes.ContainsKey(messageType))
+                        {
+                            _messageHandlerTypes.Add(messageType, type);
+                        }
+                        else
+                        {
+                            _log.Warning(string.Format(CastleResources.DuplicateMessageHandlerIgnored, _messageHandlerTypes[messageType].FullName, messageType.FullName, type.FullName));
+                        }
+
+                        _container.Register(Component.For(MessageHandlerType.MakeGenericType(messageType)).ImplementedBy(type).LifestyleTransient());
+                    }
+                }
             }
             catch (Exception ex)
             {
                 _log.Warning(string.Format(EsbResources.RegisterHandlersException, assembly.FullName,
                     ex.AllMessages()));
             }
-
-            RefreshHandledTypes();
 
             return this;
         }

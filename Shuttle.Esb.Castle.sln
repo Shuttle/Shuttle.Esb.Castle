@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shuttle.Esb.Castle", "Shuttle.Esb.Castle\Shuttle.Esb.Castle.csproj", "{97566DDF-722A-4EA7-BFA9-0136BB8C7D99}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5CA78263-233B-436C-AD99-2F91E7EEAC41}"
@@ -22,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{3084FD
 		.build\Shuttle.Core.MSBuild.targets = .build\Shuttle.Core.MSBuild.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shuttle.Esb.Castle.Tests", "Shuttle.Esb.Castle.Tests\Shuttle.Esb.Castle.Tests.csproj", "{07DA6970-79D1-4D9B-9F08-78D2ABD0F8AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,9 +42,16 @@ Global
 		{97566DDF-722A-4EA7-BFA9-0136BB8C7D99}.Release|Any CPU.Build.0 = Release|Any CPU
 		{97566DDF-722A-4EA7-BFA9-0136BB8C7D99}.Release|x64.ActiveCfg = Release|x64
 		{97566DDF-722A-4EA7-BFA9-0136BB8C7D99}.Release|x64.Build.0 = Release|x64
+		{07DA6970-79D1-4D9B-9F08-78D2ABD0F8AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07DA6970-79D1-4D9B-9F08-78D2ABD0F8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07DA6970-79D1-4D9B-9F08-78D2ABD0F8AB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{07DA6970-79D1-4D9B-9F08-78D2ABD0F8AB}.Debug|x64.Build.0 = Debug|Any CPU
+		{07DA6970-79D1-4D9B-9F08-78D2ABD0F8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07DA6970-79D1-4D9B-9F08-78D2ABD0F8AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07DA6970-79D1-4D9B-9F08-78D2ABD0F8AB}.Release|x64.ActiveCfg = Release|Any CPU
+		{07DA6970-79D1-4D9B-9F08-78D2ABD0F8AB}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
-

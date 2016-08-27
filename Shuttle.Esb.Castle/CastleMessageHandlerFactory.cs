@@ -59,21 +59,29 @@ namespace Shuttle.Esb.Castle
             {
                 foreach (var type in _reflectionService.GetTypes(MessageHandlerType, assembly))
                 {
+                    var serviceTypes = new List<Type>();
+                    
                     foreach (var @interface in type.GetInterfaces())
                     {
+                        if (!@interface.IsAssignableTo(MessageHandlerType))
+                        {
+                            continue;
+                        }
+
                         var messageType = @interface.GetGenericArguments()[0];
 
                         if (!_messageHandlerTypes.ContainsKey(messageType))
                         {
                             _messageHandlerTypes.Add(messageType, type);
+                            serviceTypes.Add(MessageHandlerType.MakeGenericType(messageType));
                         }
                         else
                         {
                             _log.Warning(string.Format(CastleResources.DuplicateMessageHandlerIgnored, _messageHandlerTypes[messageType].FullName, messageType.FullName, type.FullName));
                         }
-
-                        _container.Register(Component.For(MessageHandlerType.MakeGenericType(messageType)).ImplementedBy(type).LifestyleTransient());
                     }
+
+                    _container.Register(Component.For(serviceTypes).ImplementedBy(type).LifestyleTransient());
                 }
             }
             catch (Exception ex)

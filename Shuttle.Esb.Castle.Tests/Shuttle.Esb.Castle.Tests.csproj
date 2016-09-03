@@ -64,17 +64,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CastleMessageHandlerFactoryFaxture.cs" />
+    <Compile Include="CastleMessageHandlerFactoryFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleCommand.cs" />
     <Compile Include="SimpleEvent.cs" />
-    <Compile Include="DuplicateSimpleMessageHandler.cs" />
     <Compile Include="SimpleMessageHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Shuttle.Esb.Castle.Tests.Duplicate\Shuttle.Esb.Castle.Tests.Duplicate.csproj">
+      <Project>{65a45bcd-c0dd-4591-bd2b-b0722f026366}</Project>
+      <Name>Shuttle.Esb.Castle.Tests.Duplicate</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shuttle.Esb.Castle\Shuttle.Esb.Castle.csproj">
       <Project>{97566DDF-722A-4EA7-BFA9-0136BB8C7D99}</Project>
       <Name>Shuttle.Esb.Castle</Name>

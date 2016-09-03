@@ -8,11 +8,6 @@
         {
         }
 
-        public bool IsReusable
-        {
-            get { return true; }
-        }
-
         public void ProcessMessage(IHandlerContext<SimpleEvent> context)
         {
         }

@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{3084FD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shuttle.Esb.Castle.Tests", "Shuttle.Esb.Castle.Tests\Shuttle.Esb.Castle.Tests.csproj", "{07DA6970-79D1-4D9B-9F08-78D2ABD0F8AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shuttle.Esb.Castle.Tests.Duplicate", "Shuttle.Esb.Castle.Tests.Duplicate\Shuttle.Esb.Castle.Tests.Duplicate.csproj", "{65A45BCD-C0DD-4591-BD2B-B0722F026366}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,14 @@ Global
 		{07DA6970-79D1-4D9B-9F08-78D2ABD0F8AB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{07DA6970-79D1-4D9B-9F08-78D2ABD0F8AB}.Release|x64.ActiveCfg = Release|Any CPU
 		{07DA6970-79D1-4D9B-9F08-78D2ABD0F8AB}.Release|x64.Build.0 = Release|Any CPU
+		{65A45BCD-C0DD-4591-BD2B-B0722F026366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A45BCD-C0DD-4591-BD2B-B0722F026366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A45BCD-C0DD-4591-BD2B-B0722F026366}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{65A45BCD-C0DD-4591-BD2B-B0722F026366}.Debug|x64.Build.0 = Debug|Any CPU
+		{65A45BCD-C0DD-4591-BD2B-B0722F026366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A45BCD-C0DD-4591-BD2B-B0722F026366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65A45BCD-C0DD-4591-BD2B-B0722F026366}.Release|x64.ActiveCfg = Release|Any CPU
+		{65A45BCD-C0DD-4591-BD2B-B0722F026366}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -25,10 +25,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Shuttle.Esb.Castle for .NET Framework 4.6.1")]
 #endif
 
-[assembly: AssemblyVersion("6.1.2.0")]
+[assembly: AssemblyVersion("7.0.0.0")]
 [assembly: AssemblyCopyright("Copyright © Eben Roux 2016")]
 [assembly: AssemblyProduct("Shuttle.Esb")]
 [assembly: AssemblyCompany("Shuttle")]
 [assembly: AssemblyConfiguration("Release")]
-[assembly: AssemblyInformationalVersion("6.1.2")]
+[assembly: AssemblyInformationalVersion("7.0.0")]
 [assembly: ComVisible(false)]

@@ -1,5 +1,7 @@
 # Shuttle.Esb.Castle
 
+***Please note:*** From v8.0.0 this package has been superceded by [Shuttle.Core.Castle](https://github.com/Shuttle/Shuttle.Core.Castle).
+
 `WindsorContainer` implementation of the `IMessageHandlerFactory` for use with Shuttle.Esb.
 
 # CastleMessageHandlerFactory
